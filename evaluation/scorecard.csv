@@ -1,0 +1,11 @@
+criterion,timbr_ontology_layer,snowflake_semantic_views,notes
+Concept modeling,Strong,Strong,"Timbr models concepts as first-class ontology entities; Snowflake models them as semantic-view tables. Both covered the agreed concept list."
+Relationship modeling,Strong,Adequate,"Timbr states relationships explicitly in the ontology, including hierarchies; Snowflake expresses relationships as view joins, which covers common cases but is less explicit for deep hierarchies."
+Reusable semantic metrics,Strong,Strong,"Both define metrics once and reuse them. Timbr metrics attach to ontology concepts; Snowflake metrics attach to semantic views and are consumed natively by Cortex Analyst."
+LLM/agent query accuracy,Strong,Strong,"On the shared question set both produced structurally correct queries for the clear majority of questions; failures on both sides were dominated by genuinely ambiguous questions rather than modeling gaps."
+Query language and skills,Strong,Adequate,"Timbr queries are SQL against ontology concepts, reusable in any SQL tool. Snowflake semantic views are queried through Cortex Analyst/Agents rather than directly in SQL, which fits agent use cases but not ad-hoc SQL users."
+Platform operations,Adequate,Strong,"Timbr is an additional governed layer to deploy, secure and upgrade. Semantic views are native Snowflake objects with no extra platform footprint."
+Ecosystem fit (Cortex Analyst/Agents),Adequate,Strong,"Semantic views are the native input to Cortex Analyst and Cortex Agents. Timbr integrates at the SQL layer, so agent experiences are built on top rather than consumed natively."
+Governance and access control,Strong,Strong,"Both inherit Snowflake data access controls. Timbr adds ontology-level governance concepts; Snowflake governs through native object privileges and semantic-view definitions."
+Modeling effort,Weak,Adequate,"The ontology up-front modeling investment is materially higher: concepts, hierarchies and relationships must be designed before querying pays off. Semantic views can be built incrementally per use case."
+Time to first value,Adequate,Strong,"Semantic views answered governed questions quickly for a single domain. Timbr's payoff grows with cross-domain reuse of the shared ontology."
